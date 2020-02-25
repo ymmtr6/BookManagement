@@ -50,9 +50,9 @@ class DBAccess():
 
     def update(self, query, json):
         """
-
+        updateを実行する．
         """
-        items = self.coll.find()
+        items = self.coll.find_one_and_update(query, {"$set": json})
 
     def find(self, query, collection="test"):
         """
@@ -63,6 +63,12 @@ class DBAccess():
             return json.dumps(item, ensure_ascii=False)
         except:
             return json.dumps({})
+
+    def null_data(self):
+        """
+
+        """
+        return list(self.coll.find({"title": {"$exists": False}}))
 
 
 if __name__ == "__main__":
