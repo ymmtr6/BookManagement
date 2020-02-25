@@ -8,3 +8,6 @@ secret.py
 # mongo
 mongo/*
 !mongo/docker-compose.yml
+
+# react
+bookmanagement/build/*
