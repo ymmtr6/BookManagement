@@ -1,0 +1,4 @@
+requsests
+flask
+pymongo
+flask_csr
