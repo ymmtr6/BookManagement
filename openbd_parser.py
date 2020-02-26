@@ -37,7 +37,7 @@ class OpenBD(object):
 
         try:
             self.update(json_data, "description",
-                        api_data["onix"]["ColateralDetail"]["TextContent"][0]["Text"])
+                        api_data["onix"]["ColateralDetail"]["TextContent"][0]["Text"].strip())
         except:
             pass
 

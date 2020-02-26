@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+import json
 
 
 class Amazon(object):
@@ -49,7 +50,7 @@ class Amazon(object):
         detail = soup.find(id="productDescription")
         try:
             description = detail.find("p").text
-            self.update(json_data, "description", description)
+            self.update(json_data, "description", description.strip())
         except:
             pass
 

@@ -42,7 +42,7 @@ class GoogleAPI(object):
 
         try:
             self.update(json_data, "description",
-                        api_data["items"][0]["volumeInfo"]["description"])
+                        api_data["items"][0]["volumeInfo"]["description"].strip())
         except:
             pass
 
