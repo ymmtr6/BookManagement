@@ -27,7 +27,8 @@ class Amazon(object):
                 thumb = list(json.loads(images).keys())[-1]
                 self.update(json_data, "thumbnail", thumb)
             except:
-                pass
+                import traceback
+                traceback.print_exc()
 
         # 余裕があれば後々複数人対応を行う
         a = soup.find(class_="contributorNameID")
