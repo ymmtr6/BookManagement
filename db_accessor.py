@@ -64,11 +64,11 @@ class DBAccess():
         except:
             return json.dumps({})
 
-    def null_data(self):
+    def null_data(self, field="title"):
         """
 
         """
-        return list(self.coll.find({"title": {"$exists": False}}))
+        return list(self.coll.find({field: {"$exists": False}}))
 
 
 if __name__ == "__main__":
