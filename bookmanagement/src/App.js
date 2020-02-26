@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-//import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 //import { HomePage } from "./HomePage";
 import Books from "./BookCard"
+import Header from "./Header"
 
 /*
  * React's Component ( Main )
@@ -42,12 +43,19 @@ class App extends Component {
    */
   render() {
     return (
-      // JSX to render goes here...
-      <div className="HomePage">
-        <div className="flex mb-4">
-          <Books books={this.state.books} />
+      // JSX to render goes here..
+      <Router>
+        <div>
+          <Header />
+          <Switch>
+            <Route exact path="/">
+              <div className="flex mb-4 justify-center items-center flex-wrap" id="CardView1">
+                <Books books={this.state.books} id="Books1" />
+              </div>
+            </Route>
+          </Switch>
         </div>
-      </div>
+      </Router>
     );
   }
 }

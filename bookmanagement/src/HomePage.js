@@ -7,7 +7,7 @@ export function HomePage() {
   return (
     <div className="HomePage">
       <Header />
-      <div className="flex mb-4">
+      <div className="flex mb-4 contnet-between">
         <Link to="#" className="w-1/3">
           <ContentCard
             pageName="SNS"

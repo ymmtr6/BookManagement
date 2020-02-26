@@ -4,24 +4,32 @@ import { ContentCard } from "./ContentCard";
 
 const Books = ({ books }) => {
   return (
-    <div className="inline-block">{
-      books.map((book) => (
-        <ContentCard
-          pageName={book.title}
-          imgSrc={"thumbnail" in book ? (book.thumbnail) : "./img/noimage.png"}
-          discription={book.authors instanceof Array ? book.authors.join(" ") : book.authors}
-        />
-      ))
-    }
-    </div>
+    books.map((book, index) => (
+      <ContentCard
+        pageName={book.title}
+        imgSrc={"thumbnail" in book ? (book.thumbnail) : "./img/noimage.png"}
+        discription={book.authors instanceof Array ? book.authors.join(" ") : book.authors}
+        key={book.isbn}
+      />
+    ))
+
   )
 };
 
 export default Books
     /*
+const Books = ({ books }) => {
+return (
+<div className="inline-block">{
+books.map((book) => (
 <ContentCard
-pageName="SNS"
-imgSrc="https://source.unsplash.com/random/1600x900/"
-discription="SNSSample page!"
+pageName={book.title}
+imgSrc={"thumbnail" in book ? (book.thumbnail) : "./img/noimage.png"}
+discription={book.authors instanceof Array ? book.authors.join(" ") : book.authors}
 />
+))
+}
+</div>
+)
+};
 */
