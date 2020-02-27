@@ -1,5 +1,6 @@
 from db_accessor import DBAccess
 from amazon_search_api import Amazon
+from tqdm import tqdm
 import argparse
 
 parser = argparse.ArgumentParser(description="DB Update Script")
@@ -28,13 +29,13 @@ if not args.yes:
         print("Abort.")
         exit()
 
-for i in l:
+for i in tqdm(l):
     json_data = i.copy()
     if "_id" in json_data:
         del json_data["_id"]
-    print("[{}]".format(json_data["isbn"]), end="")
+    #print("[{}]".format(json_data["isbn"]), end="")
     json_data = amazon.parse(None, i["isbn"], json_data)
     db.update({"isbn": i["isbn"]}, json_data)
-    print("None" if "title" not in json_data else json_data["title"])
+    #print("None" if "title" not in json_data else json_data["title"])
 
 print("FINISH")
