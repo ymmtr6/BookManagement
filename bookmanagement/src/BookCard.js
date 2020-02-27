@@ -23,6 +23,9 @@ const modalStyles = {
   }
 };
 
+/*
+ * 本の一覧のコンポーネント
+ */
 class Books extends React.Component {
   constructor(props) {
     super(props)
@@ -46,6 +49,9 @@ class Books extends React.Component {
     });
   }
 
+  /*
+   * 詳細表示(Modal)
+   */
   renderProducts(product) {
     return (
       //  {_id, authors, description, isbn, publishedDate, registered, thumbnail, title}). If you meant to render a collection of children, use an array instead.
@@ -77,11 +83,11 @@ class Books extends React.Component {
             <div className="table-cell">{product.publisher}</div>
           </div>
           <div className="table-row">
-            <div className="table-cell">PublishedDate</div>
+            <div className="table-cell">Release</div>
             <div className="table-cell">{product.publishedDate}</div>
           </div>
           <div className="table-row">
-            <div className="table-cell">Registered</div>
+            <div className="table-cell">Registration date</div>
             <div className="table-cell">{product.registered}</div>
           </div>
           <div className="table-row">
@@ -96,6 +102,10 @@ class Books extends React.Component {
     )
   }
 
+  /*
+   * メイン部分
+   * カードビューで一覧表示
+   */
   render() {
     return (
       <div>
@@ -128,13 +138,3 @@ class Books extends React.Component {
 }
 
 export default Books
-
-/*
-<ContentCard
-      pageName={book.title}
-      imgSrc={"thumbnail" in book ? (book.thumbnail) : "./img/noimage.png"}
-      discription={book.authors instanceof Array ? book.authors.join(" ") : book.authors}
-      key={book.isbn}
-      onClick={this.openModal.bind(this, book)}
-    />
-    */
