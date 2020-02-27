@@ -66,7 +66,7 @@ class Books extends React.Component {
           </div>
           <div className="table-row">
             <div className="table-cell">Authors</div>
-            <div className="table-cell">{product.authors}</div>
+            <div className="table-cell">{"authors" in product ? product.authors.join(", ") : ""}</div>
           </div>
           <div className="table-row">
             <div className="table-cell">ISBN</div>
@@ -111,7 +111,7 @@ class Books extends React.Component {
                 <div className="px-6 py-4">
                   <div className="font-bold text-base sm:text-base md:text-xl lg:text-xl mb-2 w-32 sm:w-32 md:w-64 lg:w-64 xl:w-64">{book.title}</div>
                   <p className="text-gray-700 text-sm sm:text-sm md:text-base lg:text-base w-32 sm:w-32 md:w-64 lg:w-64 xl:w-64">
-                    {book.authors}
+                    {"authors" in product ? product.authors.join(", ") : ""}
                   </p>
                 </div>
               </div>
