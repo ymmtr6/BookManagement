@@ -21,7 +21,7 @@ services:
       ME_CONFIG_MONGODB_ADMINUSERNAME: root
       ME_CONFIG_MONGODB_ADMINPASSWORD: example
   web:
-    image: ymmtr6/bookmanagement:latest
+    build: .
     restart: always
     ports:
       - 80:80
