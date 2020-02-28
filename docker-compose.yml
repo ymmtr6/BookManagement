@@ -20,4 +20,12 @@ services:
     environment:
       ME_CONFIG_MONGODB_ADMINUSERNAME: root
       ME_CONFIG_MONGODB_ADMINPASSWORD: example
-
+  web:
+    image: ymmtr6/bookmanagement:latest
+    restart: always
+    ports:
+      - 80:80
+    links:
+      - mongo
+    environment:
+      MONGO_URL: mongo
