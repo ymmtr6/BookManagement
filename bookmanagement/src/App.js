@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 //import { HomePage } from "./HomePage";
 import Books from "./BookCard"
 import Header from "./Header"
+import Registration from './Registration';
 
 /*
  * React's Component ( Main )
@@ -13,7 +14,7 @@ class App extends Component {
    * Field
    */
   // web api
-  api_url = "http://localhost:80/list";
+  api_url = "/list";
 
   // state has book list.
   state = {
@@ -52,6 +53,12 @@ class App extends Component {
               <div className="flex mb-4 justify-center items-center flex-wrap" id="CardView1">
                 <Books books={this.state.books} id="Books1" />
               </div>
+            </Route>
+            <Route exact path="/registration">
+              <Registration />
+            </Route>
+            <Route exact path="/management">
+              <div></div>
             </Route>
           </Switch>
         </div>

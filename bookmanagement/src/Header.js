@@ -48,9 +48,14 @@ class Header extends Component {
               <ListItemText primary="Home" />
             </ListItem>
           </Link>
-          <Link to="/about">
+          <Link to="/registration">
             <ListItem button>
-              <ListItemText primary="About" />
+              <ListItemText primary="Registration" />
+            </ListItem>
+          </Link>
+          <Link to="/management">
+            <ListItem button>
+              <ListItemText primary="Management" />
             </ListItem>
           </Link>
         </List>
