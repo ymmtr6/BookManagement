@@ -121,7 +121,7 @@ class Books extends React.Component {
                 <div className="px-6 py-4">
                   <div className="font-bold text-base sm:text-base md:text-xl lg:text-xl mb-2 w-32 sm:w-32 md:w-64 lg:w-64 xl:w-64">{book.title}</div>
                   <p className="text-gray-700 text-sm sm:text-sm md:text-base lg:text-base w-32 sm:w-32 md:w-64 lg:w-64 xl:w-64">
-                    {"authors" in product ? product.authors.join(", ") : ""}
+                    {"authors" in book ? book.authors.join(", ") : ""}
                   </p>
                 </div>
               </div>
