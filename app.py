@@ -3,6 +3,7 @@ from db_accessor import DBAccess
 from flask import Flask, render_template, request, jsonify, make_response, send_from_directory, send_file
 import json
 from flask_cors import CORS
+import os
 
 static_folder = "bookmanagement/build/static"
 build_folder = "bookmanagement/build"
@@ -14,7 +15,7 @@ CORS(app)
 app.config["JSON_AS_ASCII"] = False
 
 book_search_api = BookSearchAPI()
-database = DBAccess()
+database = DBAccess(url=os.getenv("MONGO_URL", "localhost"))
 
 
 @app.route("/get")

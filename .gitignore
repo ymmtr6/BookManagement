@@ -6,8 +6,8 @@ __pycache__
 secret.py
 
 # mongo
-mongo/*
-!mongo/docker-compose.yml
+db
+configdb
 
 # react
 bookmanagement/build/*

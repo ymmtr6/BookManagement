@@ -1,4 +1,6 @@
-requsests
+requests
 flask
 pymongo
-flask_csr
+flask_cors
+tqdm
+beautifulsoup4

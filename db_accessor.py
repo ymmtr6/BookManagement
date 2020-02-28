@@ -1,6 +1,5 @@
 # coding:utf-8
 from pymongo import MongoClient
-import secret
 import os
 import json
 import bson.objectid
@@ -68,7 +67,11 @@ class DBAccess():
         """
 
         """
-        return list(self.coll.find({field: {"$exists": False}}))
+        try:
+            l = list(self.coll.find({field: {"$exists": False}}))
+        except:
+            pass
+        return l
 
 
 if __name__ == "__main__":

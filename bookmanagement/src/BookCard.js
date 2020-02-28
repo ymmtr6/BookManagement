@@ -87,7 +87,7 @@ class Books extends React.Component {
             <div className="table-cell">{product.publishedDate}</div>
           </div>
           <div className="table-row">
-            <div className="table-cell">Registration date</div>
+            <div className="table-cell">Registration</div>
             <div className="table-cell">{product.registered}</div>
           </div>
           <div className="table-row">
